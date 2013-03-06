@@ -42,7 +42,7 @@ sub execute
 	my $format = $opt->format //
 		q{%(grade)s: %(filename)s %(perlversion)s %(platform)s (%(reporter)s)};
 	
-	my @log = split /\r?\n/, LWP::Simple::get(TAIL_LOG);	
+	my @log = split /\r?\n/, LWP::Simple::get(TAIL_LOG);
 	for my $line (@log)
 	{
 		my $data = $self->_parse_line($line);
